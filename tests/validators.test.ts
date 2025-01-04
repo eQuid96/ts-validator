@@ -30,16 +30,7 @@ test("NumberValidator", () => {
   );
 
   const minMaxValidator = v.number().gt(2).ls(5);
-  //expect(minMaxValidator.parse(3)).toBe(3);
-  expect(minMaxValidator.parse(2)).toBe(2);
-  // expect(minMaxValidator.parse(5)).toBe(5);
-
-  // expect(() => minMaxValidator.parse(1)).toThrow();
-  // expect(() => minMaxValidator.parse(6)).toThrow();
-
-  // const positiveValidator = v.number().positive();
-  // expect(positiveValidator.parse(42)).toBe(42);
-  // expect(() => positiveValidator.parse(-42)).toThrow("Failed to parse value: -42. Expected a positive number.");
+  expect(minMaxValidator.parse(3)).toBe(3);
 });
 
 // StringValidator Tests
