@@ -52,3 +52,7 @@ This project is licensed under the MIT License.
 ## Status
 
 This project is currently in development.
+
+## Package Manager and Node.js Version
+
+We use Yarn as our package manager and recommend using Node.js version 20.10.x.
