@@ -1,0 +1,28 @@
+{
+  "compilerOptions": {
+    "target": "es2022",
+    "outDir": "dist",
+    "rootDir": "src",
+    "moduleDetection": "force",
+    "isolatedModules": true,
+    "verbatimModuleSyntax": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "noImplicitOverride": true,
+
+    //"composite": true, // monorepo, emit tsbuildinfo that avoid re-build
+    "sourceMap": true, // helpful for debugging
+    "declarationMap": true, // helpful for debugging
+
+    "module": "NodeNext", // Transpiling with tsc
+    //"module": "Preserve", //Transpiling with bundler
+    //"noEmit": true, // Transpiling with bundler only use tsc only for linting
+    "declaration": true, //Emit declaration ok if you want to publish a library
+    "lib": ["es2022"] // only running in nodejs env
+    //"lib": ["es2022", "dom", "dom.iterable"], // running in browser env
+  },
+  "exclude": ["node_modules", "tests", "dist"]
+}

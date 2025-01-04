@@ -1,0 +1,25 @@
+{
+  "name": "ts-validator",
+  "version": "0.0.1",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "type": "module",
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "test": "vitest",
+    "version": "yarn build && yarn changelog:update",
+    "clean": "node -e \"var { rmdirSync, existsSync } = require('fs'), path = require('path'); ['./dist'].forEach(fPath => {if (existsSync(path.join(__dirname, fPath))) rmdirSync(path.join(__dirname, fPath), { recursive: true })}); process.exit(0);\"",
+    "prebuild": "find tests -name \"*.ts\" | xargs tsc --noEmit --skipLibCheck",
+    "build": "tsc -p tsconfig.json"
+  },
+  "author": {
+    "name": "eQuid96",
+    "url": "https://github.com/eQuid96"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.9",
+    "typescript": "^5.5.3",
+    "vitest": "^1.6.0"
+  }
+}
