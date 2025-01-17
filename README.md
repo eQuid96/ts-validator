@@ -16,6 +16,8 @@ Since this project is still in development, installation instructions will be pr
 
 Here's a quick example of how to use TS Validator:
 
+### Create and parse a schema
+
 ```typescript
 import { v } from "ts-validator";
 
@@ -41,6 +43,41 @@ try {
 }
 ```
 
+### Infer a type from a schema
+
+```typescript
+import { v, Infer } from "ts-validator";
+
+//1. Define a schema
+
+const TestSchema = v.object({
+  name: v.string(),
+  value: v.number(),
+  flag: v.boolean(),
+  nested: v.object({
+    nestedName: v.string(),
+    nestedValue: v.number(),
+    op: v.string().optional(),
+  }),
+});
+
+//2. Infer the type from the schema
+type TestSchemaType = Infer<typeof TestSchema>;
+
+//3. The result of the infered type is the following:
+
+type TestSchemaType = {
+  name: string;
+  value: number;
+  flag: boolean;
+  nested: {
+    nestedName: string;
+    nestedValue: number;
+    op?: string | undefined;
+  };
+};
+```
+
 ## Contributing
 
 Contributions are welcome! Please fork the repository and submit a pull request.
@@ -56,3 +93,7 @@ This project is currently in development.
 ## Package Manager and Node.js Version
 
 We use Yarn as our package manager and recommend using Node.js version 20.10.x.
+
+```
+
+```

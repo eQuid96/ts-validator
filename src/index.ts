@@ -14,6 +14,5 @@ export const v = {
   array: <T extends Validator>(validator: T) => new ArrayValidator(validator),
   object: <T extends Record<string, Validator>>(fields: T) => new ObjectValidator(fields),
   enum: <TString extends string, T extends Readonly<[TString, ...TString[]]>>(values: T) => new EnumValidator(values),
-  //in max per le string e numer
   //literal string (enums)
 };
