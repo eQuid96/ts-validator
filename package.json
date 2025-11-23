@@ -8,8 +8,7 @@
   "license": "MIT",
   "scripts": {
     "test": "vitest",
-    "version": "yarn build && yarn changelog:update",
-    "clean": "node -e \"var { rmdirSync, existsSync } = require('fs'), path = require('path'); ['./dist'].forEach(fPath => {if (existsSync(path.join(__dirname, fPath))) rmdirSync(path.join(__dirname, fPath), { recursive: true })}); process.exit(0);\"",
+    "clean": "rm -rf ./dist",
     "prebuild": "find tests -name \"*.ts\" | xargs tsc --noEmit --skipLibCheck",
     "build": "tsc -p tsconfig.json"
   },
@@ -18,8 +17,8 @@
     "url": "https://github.com/eQuid96"
   },
   "devDependencies": {
-    "@types/node": "^20.14.9",
+    "@types/node": "^24.10.1",
     "typescript": "^5.5.3",
-    "vitest": "^1.6.0"
+    "vitest": "^4.0.13"
   }
 }
